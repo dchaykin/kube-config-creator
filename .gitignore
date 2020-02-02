@@ -4,3 +4,4 @@
 go.sum*
 kube-config-creator
 config
+.vscode
