@@ -1,7 +1,7 @@
 ### kube-config-creator
 Go app to create .kube/config for a service account
 
-#### Prerequisite
+#### Prerequisites
 You must have an admin access to the kubernetes cluster in order to be able to create a new kube-config file.
 
 #### How to use kube-config-creator
