@@ -9,9 +9,9 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceRoot}/main.go",
+            "program": "${workspaceRoot}",
             "env": {},
-            "args": [],
+            "args": ["--kubeconfig=./config/kube-config"],
             "showLog": false,
             "apiVersion": 2
         }

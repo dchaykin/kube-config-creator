@@ -28,16 +28,14 @@ func main() {
 	fmt.Print("Service Account (e.g. john-smith): ")
 	panik.OnError(userInput.ReadServiceAccountName())
 
-	fmt.Print("Cluster Role (e.g. pod-reader): ")
-	panik.OnError(userInput.ReadRoleName())
-
 	fmt.Print("Namespace (default, if empty): ")
 	panik.OnError(userInput.ReadNamespace())
 
-	clientset := creator.GetClientSet(kubeconfig)
+	configCreator := creator.ConfigCreator{}
+	configCreator.Login(kubeconfig)
+	configCreator.CreateServiceAccount(userInput.GetNamespace(), userInput.GetServiceAccountName())
 
-	sa := creator.CreateServiceAccount(clientset, userInput.GetNamespace(), userInput.GetServiceAccountName())
-	token := creator.GetServiceAccountToken(clientset, sa)
+	configCreator.CreateNew()
 }
 
 func getKubeConfig() *string {
