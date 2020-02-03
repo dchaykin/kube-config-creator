@@ -15,4 +15,4 @@ Output:
 * File `kube-config-<SERVICE_ACCOUNT>.yaml`. Copy this file into your ${HOME}/.kube/config to activate the account.
 
 #### Note
-This app activates a service account on a client computer, but does not create any roles or rolebindings in the cluster. You as administrator still have to configure the access to the cluster resources by creating RBAC-policies.
+This app creates a config file for a service account (ready for use), but does not set up any roles or rolebindings in the cluster. You as administrator still have to configure the access to the cluster resources by creating RBAC-policies.
